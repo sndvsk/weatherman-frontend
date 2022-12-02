@@ -1,0 +1,23 @@
+<ng-container [formGroup]="formWeather" (ngSubmit)="onSubmit()">
+    <mat-card class="formContainer">
+        <app-map
+            (messageEventMap)="receiveMessageMap($event)">
+        </app-map>
+        <mat-card-title>Press Enter on fill</mat-card-title>
+        <app-coords
+            formGroupName="coordsForm"
+            (messageEventCoords)="receiveMessageCoords($event)">
+        </app-coords>
+        <pre></pre>
+        <app-date-range-picker
+            formGroupName="dateForm">
+        </app-date-range-picker>
+        <pre></pre>
+        <app-checkbox
+            formGroupName="apiForm">
+        </app-checkbox>
+        <pre></pre>
+        <button class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
+        <app-error id="formError" #ctrlFormError></app-error>
+    </mat-card>
+</ng-container>

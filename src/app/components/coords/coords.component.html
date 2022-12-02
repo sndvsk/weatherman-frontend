@@ -1,0 +1,37 @@
+<ng-container [formGroup]="coordsForm">
+    <mat-card class="formContainer">
+        <mat-form-field>
+            <mat-label>Latitude:</mat-label><br>
+            <input
+                matInput
+                type="number"
+                id="latitude"
+                name="latitude"
+                placeholder="Latitude"
+                formControlName="latitude"
+                (keypress)="onKeyPressEvent($event)"
+                value="{{lat}}">
+                <mat-error></mat-error>
+        </mat-form-field>
+        <app-error
+            #ctrlLatError>
+        </app-error>
+        <pre></pre>
+        <mat-form-field>
+            <mat-label>Longitude:</mat-label><br>
+            <input
+                matInput
+                type="number"
+                id="longitude"
+                name="longitude"
+                formControlName="longitude"
+                placeholder="Longitude"
+                (keypress)="onKeyPressEvent($event)"
+                value="{{lng}}">
+                <mat-error></mat-error>
+        </mat-form-field>
+        <app-error
+            #ctrlLngError>
+        </app-error>
+    </mat-card>
+</ng-container>

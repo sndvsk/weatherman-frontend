@@ -1,0 +1,8 @@
+<highcharts-chart
+  class="chart"
+  [Highcharts]="Highcharts"
+  [options]="chartOptions"
+  [(update)]="updateFlag"
+>
+</highcharts-chart>
+<button class="btn btn-primary" type="submit" id="csvButton" (click)="downloadCSV()">Download CSV</button>

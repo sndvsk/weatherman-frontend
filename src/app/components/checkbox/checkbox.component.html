@@ -1,0 +1,29 @@
+<ng-container [formGroup]="apiForm">
+  <mat-card class="formContainer">
+    <section class="example-section" [formGroup]="apiForm">
+      <mat-label>Select APIs:</mat-label><br>
+      <mat-checkbox
+        matTooltip="Api shows forecast up to 9 days"
+        matTooltipPosition="left"
+        color="primary"
+        formControlName="yrnoApi">
+        Yr.no API
+      </mat-checkbox><br>
+      <mat-checkbox
+        matTooltip="Api shows forecats up to 15 days"
+        matTooltipPosition="left"
+        color="primary"
+        formControlName="openmeteoApi">
+        OpenMeteo API
+      </mat-checkbox><br>
+      <mat-checkbox
+        matTooltip="Api shows forecats up to 10 days"
+        matTooltipPosition="left"
+        color="primary"
+        formControlName="weatherApi">
+        WeatherAPI
+      </mat-checkbox><br>
+    </section>
+    <app-error #ctrlCheckboxError></app-error>
+  </mat-card>
+</ng-container>

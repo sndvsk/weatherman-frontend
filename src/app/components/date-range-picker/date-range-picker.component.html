@@ -1,0 +1,27 @@
+<!-- https://material.angular.io/components/datepicker/overview 
+-->
+<!-- <span>Select date range:</span><br> -->
+<mat-card class="formContainer">
+  <mat-form-field>
+    <mat-label>Enter a date range (max 10 days)</mat-label>
+    <mat-date-range-input [rangePicker]="picker"
+                          [formGroup]="dateForm"
+                          [comparisonStart]="comparisonStart"
+                          [comparisonEnd]="comparisonEnd"
+                          [max]="maxDate"
+                          [min]="minDate">
+      <input matStartDate placeholder="Start date"
+                          formControlName="startDate"/>
+      <input matEndDate placeholder="End date"
+                        formControlName="endDate"/>
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY - MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+  <app-error #ctrlDateError>
+  </app-error>
+</mat-card>
+
+<!-- <p>Selected range: {{dateForm.value | json}}</p> -->
+

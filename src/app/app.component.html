@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>WeathermanTask</title>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<span id="id_title">Weatherman</span>
+		</div>
+		<div class="mainbody">
+			<div class="div_body_right">
+				<ng-container [formGroup]="form">
+					<app-form formGroupName="formWeather"
+					(onSubmitCompletedEmitForm)="passFormToGraphComponent($event)"
+					(onSubmitCompletedEmitData)="passDataToGraphComponent($event)"></app-form>
+				</ng-container>
+			</div>
+			<div class="div_body_left">
+				<app-graph></app-graph>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
